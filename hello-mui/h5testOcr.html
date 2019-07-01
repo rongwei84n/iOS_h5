@@ -169,6 +169,13 @@
       }
     }
 
+    function setScreenLight()
+    {
+
+        var light=document.getElementById("light_input").value;
+       window.doSetting.setScreenLight(Number(light));
+    }
+
 	   function captureSelf(){
         window.goActivity.verifyDangerUser(true,'','',"javascript:captureActionCallBack('%s')");
       }
@@ -187,6 +194,7 @@
 		{
         document.getElementById("captureAction2").innerHTML =" 他人检测完成   "+number;
     }
+
 
     <!--身份证正面的回调方法-->
     function getFrontIdCard(frontcardInfo){
@@ -542,15 +550,15 @@
     </div><br>
 
     <div class="row">
-        <button type="button" class="btn" onclick="window.goActivity.goMocamContact(1,'',0,'javascript:jsCallBack('%s')')">跳转联系人单选不关闭</button>
+        <button type="button" class="btn" onclick="window.goActivity.goMocamContact(1,'',0,'javascript:jsCallBack(%s)')">跳转联系人单选不关闭</button>
     </div><br>
 
     <div class="row">
-        <button type="button" class="btn" onclick="window.goActivity.goMocamContact(2,'',0,'javascript:jsCallBack('%s')')">跳转联系人单选关闭</button>
+        <button type="button" class="btn" onclick="window.goActivity.goMocamContact(2,'',0,'javascript:jsCallBack(%s)')">跳转联系人单选关闭</button>
     </div><br>
 
     <div class="row">
-        <button type="button" class="btn" onclick="window.goActivity.goMocamContact(3,'11111111111,11111111111,11111111111',30,'javascript:jsCallBack('%s')')">跳转联系人多选</button>
+        <button type="button" class="btn" onclick="window.goActivity.goMocamContact(3,'11111111111,11111111111,11111111111',30,'javascript:jsCallBack(%s)')">跳转联系人多选</button>
     </div><br>
 
     <div class="row">
@@ -582,7 +590,8 @@
     </div><br>
 
     <div class="row">
-        <button type="button" class="btn" onclick="window.doSetting.setScreenLight(255)">设置亮度</button>
+        <input type="number" placeholder="请输入亮度（1-255）" id="light_input" value=255/><br>
+        <button type="button" class="btn" onclick="setScreenLight()">设置亮度</button>
     </div><br>
 
     <div class="row">
@@ -914,6 +923,13 @@
         <input type="text" placeholder="请输入红包ID" id="redpacket_txt"/><br>
         <button type="button" class="btn" value="go" onclick="openredpacket()">唤起数字钱包</button>
     </div><br>
+
+    <div class="row">
+        <button type="button" class="btn" onclick="window.goActivity.verifyPwdByToken('javascript:jsCallBack(%s)')">获取支付密码Toekn</button>
+    </div><br>
+
+
+
 
 </div>
 
