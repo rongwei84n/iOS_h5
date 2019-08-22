@@ -117,15 +117,16 @@ function goSinglePacketShow() {
 }
 
 function getAddressList() {
-    var info = document.getElementById("reqContent").value;
-    debugger
-    if (info) {
-        goBatchPacketsContact(info);
+    // var info = document.getElementById("reqContent").value;
+    // debugger
+    // if (info) {
+    //     goBatchPacketsContact(info);
 
-    } else {
-        goBatchPacketsContact('30', '18711093252,18711093252,18711093252');
+    // } else {
+    //     goBatchPacketsContact('30', '18711093252,18711093252,18711093252');
 
-    }
+    // }
+    goBatchPacketsContact('30', '18711093252,18711093252,18711093252');
 
 }
 function trimStr(str){return str.replace(/(^\s*)|(\s*$)/g,"");}
